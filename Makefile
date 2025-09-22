@@ -5,20 +5,21 @@ CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -O2
 LDFLAGS = 
 BUILD_DIR = bin
 SRC_DIR = src
+lab_DIR = lab2
 
 PROGRAMS = $(BUILD_DIR)/lab2_1 $(BUILD_DIR)/lab2_2 $(BUILD_DIR)/lab2_3
 
 all: $(PROGRAMS)
 
-$(BUILD_DIR)/lab2_1: $(SRC_DIR)/lab2_1.c
+$(BUILD_DIR)/lab2_1: $(lab_DIR)/lab2_1.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-$(BUILD_DIR)/lab2_2: $(SRC_DIR)/lab2_2.c
+$(BUILD_DIR)/lab2_2: $(lab_DIR)/lab2_2.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-$(BUILD_DIR)/lab2_3: $(SRC_DIR)/lab2_3.c
+$(BUILD_DIR)/lab2_3: $lab_DIR)/lab2_3.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
