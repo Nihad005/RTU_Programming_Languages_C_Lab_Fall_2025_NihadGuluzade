@@ -5,36 +5,36 @@ CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -O2
 LDFLAGS = 
 BUILD_DIR = bin
 SRC_DIR = src
-lab_DIR = Lab3
+lab_DIR = Lab4
 
-PROGRAMS = $(BUILD_DIR)/lab3_1 $(BUILD_DIR)/lab3_2 $(BUILD_DIR)/lab3_3
+PROGRAMS = $(BUILD_DIR)/Lab4_1 $(BUILD_DIR)/Lab4_2 $(BUILD_DIR)/Lab4_3
 
 all: $(PROGRAMS)
 
-$(BUILD_DIR)/lab3_1: $(lab_DIR)/lab3_1.c
+$(BUILD_DIR)/Lab4_1: $(lab_DIR)/Lab4_1.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-$(BUILD_DIR)/lab3_2: $(lab_DIR)/lab3_2.c
+$(BUILD_DIR)/Lab4_2: $(lab_DIR)/lab4_2.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-$(BUILD_DIR)/lab3_3: $lab_DIR)/lab3_3.c
+$(BUILD_DIR)/Lab4_3: $lab_DIR)/Lab4_3.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-lab3_1: $(BUILD_DIR)/lab3_1
-lab3_2: $(BUILD_DIR)/lab3_2
-lab3_3: $(BUILD_DIR)/lab3_3
+Lab4_1: $(BUILD_DIR)/Lab4_1
+Lab4_2: $(BUILD_DIR)/Lab4_2
+Lab4_3: $(BUILD_DIR)/Lab4_3
 
-run-lab3_1: lab3_1
-	./$(BUILD_DIR)/lab3_1
+run-Lab4_1: Lab4_1
+	./$(BUILD_DIR)/lab4_1
 
-run-lab3_2: lab3_2
-	./$(BUILD_DIR)/lab3_2
+run-Lab4_2: Lab4_2
+	./$(BUILD_DIR)/lab4_2
 
-run-lab3_3: lab3_3
-	./$(BUILD_DIR)/lab3_3
+run-Lab4_3: Lab4_3
+	./$(BUILD_DIR)/Lab4_3
 
 clean:
 	rm -rf $(BUILD_DIR)/*.o $(PROGRAMS)
