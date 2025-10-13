@@ -5,36 +5,36 @@ CFLAGS = -std=c11 -Wall -Wextra -Wpedantic -O2
 LDFLAGS = 
 BUILD_DIR = bin
 SRC_DIR = src
-lab_DIR = Lab4
+lab_DIR = Lab5
 
-PROGRAMS = $(BUILD_DIR)/Lab4_1 $(BUILD_DIR)/Lab4_2 $(BUILD_DIR)/Lab4_3
+PROGRAMS = $(BUILD_DIR)/week5_task1_file_io $(BUILD_DIR)/week5_task2_struct_save_load $(BUILD_DIR)/week5_task3_student_management_system
 
 all: $(PROGRAMS)
 
-$(BUILD_DIR)/Lab4_1: $(lab_DIR)/Lab4_1.c
+$(BUILD_DIR)/week5_task1_file_io: $(lab_DIR)/week5_task1_file_io.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-$(BUILD_DIR)/Lab4_2: $(lab_DIR)/lab4_2.c
+$(BUILD_DIR)/week5_task2_struct_save_load : $(lab_DIR)/week5_task2_struct_save_load.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-$(BUILD_DIR)/Lab4_3: $lab_DIR)/Lab4_3.c
+$(BUILD_DIR)/Lab4_3: $lab_DIR)/
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
-Lab4_1: $(BUILD_DIR)/Lab4_1
-Lab4_2: $(BUILD_DIR)/Lab4_2
-Lab4_3: $(BUILD_DIR)/Lab4_3
+week5_task1_file_io: $(BUILD_DIR)/week5_task1_file_io
+week5_task2_struct_save_load: $(BUILD_DIR)/week5_task2_struct_save_load.c
+week5_task3_student_management_system: $(BUILD_DIR)/week5_task3_student_management_system
 
-run-Lab4_1: Lab4_1
-	./$(BUILD_DIR)/lab4_1
+run-week5_task1_file_io: week5_task1_file_io
+	./$(BUILD_DIR)/week5_task1_file_io
 
-run-Lab4_2: Lab4_2
-	./$(BUILD_DIR)/lab4_2
+run-week5_task2_struct_save_load: week5_task2_struct_save_load.c
+	./$(BUILD_DIR)/week5_task2_struct_save_load
 
-run-Lab4_3: Lab4_3
-	./$(BUILD_DIR)/Lab4_3
+run-week5_task3_student_management_system: week5_task3_student_management_system.c
+	./$(BUILD_DIR)/week5_task3_student_management_system
 
 clean:
 	rm -rf $(BUILD_DIR)/*.o $(PROGRAMS)
